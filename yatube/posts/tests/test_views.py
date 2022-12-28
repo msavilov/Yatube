@@ -287,8 +287,6 @@ class CacheTests(TestCase):
         """Тест кэширования страниц"""
         pages = (
             (reverse('posts:index')),
-            (reverse('posts:group_list',
-                     kwargs={'slug': f'{self.group.slug}'})),
         )
         for page in pages:
             with self.subTest(page=page):
