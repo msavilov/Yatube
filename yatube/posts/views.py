@@ -24,7 +24,6 @@ def index(request):
     return render(request, 'posts/index.html', context)
 
 
-@cache_page(CACHE_TIME)
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     post_list = group.posts.select_related('author')
