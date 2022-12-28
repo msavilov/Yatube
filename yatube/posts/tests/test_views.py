@@ -362,6 +362,7 @@ class FollowTests(TestCase):
                          'Подписка не былжна была быть создана')
 
     def test_unfollow_authorized_client(self):
+        """Проверка возможности отписаться от автора"""
         self.authorized_client.get(
             reverse('posts:profile_follow',
                     kwargs={'username': self.user.username}))
