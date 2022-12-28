@@ -1,0 +1,42 @@
+{% extends "base_for_form.html" %}
+
+{% block title %}
+  {% if is_edit %}
+    Редактировать пост
+  {% else %}
+    Новый пост
+  {% endif %}
+{% endblock %}
+
+{% block include_header %}
+  {% if is_edit %}
+    Редактировать пост
+  {% else %}
+    Новый пост
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% include 'includes/form_errors.html' %}
+  {% if is_edit %}
+    <form method="post"
+      enctype='multipart/form-data'
+      action="{% url 'posts:post_edit' post.id %}">
+  {% else %}
+    <form method="post"
+      enctype='multipart/form-data'
+      action="{% url 'posts:post_create' %}">
+  {% endif %}
+  {% csrf_token %} 
+  {% include 'includes/field_for_form.html'%}
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary">
+        {% if is_edit %}
+          Сохранить
+        {% else %}
+          Добавить
+        {% endif %}
+      </button>
+    </div>
+  </form>
+{% endblock %}
