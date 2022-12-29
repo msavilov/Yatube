@@ -3,6 +3,7 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block content%}
+  {% load thumbnail %}
   <div class="container py-5">
     <article>
       {% include 'posts/includes/switcher.html' %}
