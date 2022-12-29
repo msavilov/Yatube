@@ -44,6 +44,7 @@ class PostURLTests(TestCase):
         self.create_post_url = ('/create/', 'posts/edit_post.html')
         self.edit_post_url = (f'/posts/{self.post.id}/edit/',
                               'posts/edit_post.html')
+        self.follow_url = ('/follow/', 'posts/follow.html')
         self.redirect_url = '/auth/login/?next='
 
     def test_urls_guest_client(self) -> None:
@@ -74,6 +75,7 @@ class PostURLTests(TestCase):
             self.post_url,
             self.create_post_url,
             self.edit_post_url,
+            self.follow_url,
         )
         for page, _ in pages:
             with self.subTest(page=page):
@@ -122,6 +124,7 @@ class PostURLTests(TestCase):
             self.post_url,
             self.create_post_url,
             self.edit_post_url,
+            self.follow_url,
         )
         for address, template in pages:
             with self.subTest(address=address):

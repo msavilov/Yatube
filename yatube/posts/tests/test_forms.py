@@ -106,7 +106,7 @@ class PostCreateFormTests(TestCase):
         self.assertNotEqual(Post.objects.count(), 1,
                             'Поcт добавлен в базу данных по ошибке')
 
-    def test_can_not_create_commit_guest_client(self):
+    def test_can_not_create_comment_guest_client(self):
         '''
         Проверка запрета создания комментария неавторизованному пользователю
         '''

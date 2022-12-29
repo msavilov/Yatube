@@ -109,6 +109,7 @@ class PostURLTests(TestCase):
         self.assertEqual(first_object.text, self.post.text)
         self.assertEqual(first_object.group, self.post.group)
         self.assertEqual(first_object.author, self.post.author)
+        self.assertEqual(first_object.image, self.post.image)
 
     def test_list_page_show_correct_context(self):
         """Тест, что шаблон group_list сформирован с правильным контекстом."""
